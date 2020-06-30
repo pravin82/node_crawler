@@ -23,6 +23,7 @@ let currDate = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`;
 // recieve crawled data from main thread
 parentPort.once("message", (message) => {
     console.log("Recieved data from mainWorker...");
+    console.log("message+++++", JSON.stringify(message))
 
     // store data gotten from main thread in database
     db.collection("Rates").doc(currDate).set({

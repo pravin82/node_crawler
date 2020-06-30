@@ -2,13 +2,16 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 
 const url = "https://www.iban.com/exchange-rates";
-fetchData(url).then( (res) => {
+const softwareUrl = "https://www.softwaresuggest.com/trading-software"
+
+fetchData(softwareUrl).then( (res) => {
     const html = res.data;
     const $ = cheerio.load(html);
-    const statsTable = $('.table.table-bordered.table-hover.downloads > tbody > tr');
-    statsTable.each(function() {
-        let title = $(this).find('td').text();
-        console.log(title);
+    const productList = $('.cat_list_append').find('section');
+    
+    productList.each(function() {
+       let title = $(this).find($('.ga_soft_name')).val();
+      console.log("title++++", title);
     });
 })
 
