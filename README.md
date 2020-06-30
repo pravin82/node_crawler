@@ -7,7 +7,7 @@ This repository contains code for a web crawler that scrapes a website and store
 ## Installation
 1. Clone the repository
 2. Install dependencies - npm install
-3. Navigate into the src directory and run the main thread - node main
+3. Navigate into the src directory and run the main thread - node main-intro
 
 This project was built with the following:
 
